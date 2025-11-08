@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titus Köln - November 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .legend {
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .schedule {
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #34495e;
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        tr:hover td {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+        }
+        
+        .date-cell {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .day-cell {
+            background: #34495e;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .work-time {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 600;
+        }
+        
+        .vacation {
+            background: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+        }
+        
+        .special {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: 600;
+        }
+        
+        .free {
+            background: #e9ecef;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .weekend {
+            background: rgba(52, 73, 94, 0.1);
+        }
+        
+        .employee-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            th, td {
+                padding: 8px 4px;
+                font-size: 0.9em;
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍 Titus Köln</h1>
+            <div class="subtitle">Arbeitsplan November 2025</div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #d4edda;"></div>
+                <span>Arbeitszeit</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #fff3cd;"></div>
+                <span>Urlaub (U)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f8d7da;"></div>
+                <span>Sonderzeichen (AT)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e9ecef;"></div>
+                <span>Frei (/)</span>
+            </div>
+        </div>
+        
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Tag</th>
+                        <th>Jerry</th>
+                        <th>Caspar</th>
+                        <th>Siun</th>
+                        <th>Alex</th>
+                        <th>Fabian</th>
+                        <th>Dominik</th>
+                        <th>Chiara</th>
+                        <th>Julius</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">03.11.2025</td>
+                        <td class="day-cell">MO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">04.11.2025</td>
+                        <td class="day-cell">DI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">05.11.2025</td>
+                        <td class="day-cell">MI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="vacation">U</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">06.11.2025</td>
+                        <td class="day-cell">DO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">07.11.2025</td>
+                        <td class="day-cell">FR</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="vacation">U</td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr class="weekend">
+                        <td class="date-cell">08.11.2025</td>
+                        <td class="day-cell">SA</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="work-time">13:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">10.11.2025</td>
+                        <td class="day-cell">MO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">11.11.2025</td>
+                        <td class="day-cell">DI</td>
+                        <td class="work-time">11:00-17:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">12.11.2025</td>
+                        <td class="day-cell">MI</td>
+                        <td class="special">AT</td>
+                        <td class="free">/</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">13.11.2025</td>
+                        <td class="day-cell">DO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">14.11.2025</td>
+                        <td class="day-cell">FR</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="vacation">U</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr class="weekend">
+                        <td class="date-cell">15.11.2025</td>
+                        <td class="day-cell">SA</td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">13:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">17.11.2025</td>
+                        <td class="day-cell">MO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">18.11.2025</td>
+                        <td class="day-cell">DI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free">/</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">19.11.2025</td>
+                        <td class="day-cell">MI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">20.11.2025</td>
+                        <td class="day-cell">DO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free">/</td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">21.11.2025</td>
+                        <td class="day-cell">FR</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="vacation">U</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr class="weekend">
+                        <td class="date-cell">22.11.2025</td>
+                        <td class="day-cell">SA</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">13:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">24.11.2025</td>
+                        <td class="day-cell">MO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">25.11.2025</td>
+                        <td class="day-cell">DI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free">/</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">26.11.2025</td>
+                        <td class="day-cell">MI</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">27.11.2025</td>
+                        <td class="day-cell">DO</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="free">/</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">28.11.2025</td>
+                        <td class="day-cell">FR</td>
+                        <td class="work-time">11:00-18:00</td>
+                        <td class="work-time">11:00-19:00</td>
+                        <td class="vacation">U</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="work-time">14:00-19:00</td>
+                    </tr>
+                    <tr class="weekend">
+                        <td class="date-cell">29.11.2025</td>
+                        <td class="day-cell">SA</td>
+                        <td class="free"></td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="work-time">10:00-18:00</td>
+                        <td class="work-time">13:00-18:00</td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                        <td class="free"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>🛍 Titus Köln • Arbeitsplan November 2025 • Generiert am <span id="currentDate"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Aktuelles Datum einfügen
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('de-DE', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Hover-Effekt für bessere Interaktivität
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.01)';
+                });
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
