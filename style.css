@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+.rosenmontag {
+  background-color: #cce5ff;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
