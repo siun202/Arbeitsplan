@@ -1,4 +1,66 @@
-/* Reset and base */
+
+
+
+ /* Tab-Navigation */
+    .tab-navigation {
+      display: flex;
+      background: #2c3e50;
+      padding: 10px 10px 0 10px;
+      gap: 5px;
+      overflow-x: auto;
+    }
+    
+    .tab-button {
+      padding: 12px 24px;
+      background: #34495e;
+      color: white;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    
+    .tab-button:hover {
+      background: #3d566e;
+    }
+    
+    .tab-button.active {
+      background: white;
+      color: #2c3e50;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    /* Monatsspezifische Anpassungen */
+    .empty-month-message {
+      text-align: center;
+      padding: 50px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      color: #6c757d;
+      font-style: italic;
+      margin: 20px;
+    }
+    
+    /* Kleine Anpassung für mehr Spalten */
+    @media (max-width: 1200px) {
+      .schedule {
+        overflow-x: auto;
+      }
+      
+      table {
+        min-width: 1000px;
+      }
+    }/* Reset and base */
 * {
     margin: 0;
     padding: 0;

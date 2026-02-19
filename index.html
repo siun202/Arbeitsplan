@@ -3,373 +3,897 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Titus Köln - Februar 2026</title>
+  <title>Titus Köln - Arbeitsplan 2026</title>
 
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   
+  <style>
+    /* Tab-Navigation */
+    .tab-navigation {
+      display: flex;
+      background: #2c3e50;
+      padding: 10px 10px 0 10px;
+      gap: 5px;
+      overflow-x: auto;
+    }
+    
+    .tab-button {
+      padding: 12px 24px;
+      background: #34495e;
+      color: white;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    
+    .tab-button:hover {
+      background: #3d566e;
+    }
+    
+    .tab-button.active {
+      background: white;
+      color: #2c3e50;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    /* Monatsspezifische Anpassungen */
+    .empty-month-message {
+      text-align: center;
+      padding: 50px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      color: #6c757d;
+      font-style: italic;
+      margin: 20px;
+    }
+    
+    /* Kleine Anpassung für mehr Spalten */
+    @media (max-width: 1200px) {
+      .schedule {
+        overflow-x: auto;
+      }
+      
+      table {
+        min-width: 1000px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>🛍 Titus Köln</h1>
-      <div class="subtitle">Arbeitsplan Februar 2026</div>
+      <div class="subtitle">Arbeitsplan 2026</div>
     </div>
 
-    <div class="legend">
-      <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-      <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-      <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT)</span></div>
-      <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (/)</span></div>
-      <div class="legend-item"><div class="legend-color" style="background-color: #cce5ff;"></div><span>Rosenmontag</span></div>
+    <!-- Tab Navigation -->
+    <div class="tab-navigation">
+      <button class="tab-button active" onclick="showMonth('feb')">Februar 2026</button>
+      <button class="tab-button" onclick="showMonth('mar')">März 2026</button>
+      <button class="tab-button" onclick="showMonth('apr')">April 2026</button>
+      <button class="tab-button" onclick="showMonth('mai')">Mai 2026</button>
+      <button class="tab-button" onclick="showMonth('jun')">Juni 2026</button>
+      <button class="tab-button" onclick="showMonth('jul')">Juli 2026</button>
     </div>
 
-    <div class="schedule">
-      <table>
-        <thead>
-          <tr>
-            <th>Datum</th>
-            <th>Tag</th>
-            <th>Jerry</th>
-            <th>Caspar</th>
-            <th>Siun</th>
-            <th>Alex</th>
-            <th>Fabian</th>
-            <th>Dominik</th>
-            <th>Chiara</th>
-            <th>Julius</th>
-            <th>Sina</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="date-cell">02.02.2026</td>
-            <td class="day-cell">MO</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">03.02.2026</td>
-            <td class="day-cell">DI</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">04.02.2026</td>
-            <td class="day-cell">MI</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">05.02.2026</td>
-            <td class="day-cell">DO</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">06.02.2026</td>
-            <td class="day-cell">FR</td>
-            <td class="special">AT</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr class="weekend">
-            <td class="date-cell">07.02.2026</td>
-            <td class="day-cell">SA</td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">13:00-18:00</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">09.02.2026</td>
-            <td class="day-cell">MO</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">10.02.2026</td>
-            <td class="day-cell">DI</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">11.02.2026</td>
-            <td class="day-cell">MI</td>
-            <td class="work-time">11:00-18:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="vacation">U</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">12.02.2026</td>
-            <td class="day-cell">DO</td>
-            <td class="work-time">11:00-14:00</td>
-            <td class="free">/</td>
-            <td class="work-time">11:00-14:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">13.02.2026</td>
-            <td class="day-cell">FR</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr class="weekend">
-            <td class="date-cell">14.02.2026</td>
-            <td class="day-cell">SA</td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">13:00-18:00</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-          </tr>
-          <tr class="special-day">
-            <td class="date-cell">16.02.2026</td>
-            <td class="day-cell">MO</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-            <td class="rosenmontag">Rosenmo.</td>
-          </tr>
-          <tr>
-            <td class="date-cell">17.02.2026</td>
-            <td class="day-cell">DI</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free">/</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">18.02.2026</td>
-            <td class="day-cell">MI</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">19.02.2026</td>
-            <td class="day-cell">DO</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">20.02.2026</td>
-            <td class="day-cell">FR</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr class="weekend">
-            <td class="date-cell">21.02.2026</td>
-            <td class="day-cell">SA</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">13:00-18:00</td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">23.02.2026</td>
-            <td class="day-cell">MO</td>
-            <td class="vacation">U</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-          </tr>
-          <tr>
-            <td class="date-cell">24.02.2026</td>
-            <td class="day-cell">DI</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-          </tr>
-          <tr>
-            <td class="date-cell">25.02.2026</td>
-            <td class="day-cell">MI</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-          </tr>
-          <tr>
-            <td class="date-cell">26.02.2026</td>
-            <td class="day-cell">DO</td>
-            <td class="vacation">U</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free">/</td>
-            <td class="free">/</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">11:00-19:00</td>
-          </tr>
-          <tr>
-            <td class="date-cell">27.02.2026</td>
-            <td class="day-cell">FR</td>
-            <td class="vacation">U</td>
-            <td class="special">AT</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="work-time">14:00-19:00</td>
-            <td class="work-time">11:00-19:00</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free">/</td>
-            <td class="free"></td>
-          </tr>
-          <tr class="weekend">
-            <td class="date-cell">28.02.2026</td>
-            <td class="day-cell">SA</td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-            <td class="free"></td>
-            <td class="work-time">13:00-18:00</td>
-            <td class="free">/</td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="free"></td>
-            <td class="work-time">10:00-18:00</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Februar 2026 -->
+    <div id="feb" class="tab-content active">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (/)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #cce5ff;"></div><span>Rosenmontag</span></div>
+      </div>
+
+      <div class="schedule">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Tag</th>
+              <th>Jerry</th>
+              <th>Caspar</th>
+              <th>Siun</th>
+              <th>Alex</th>
+              <th>Fabian</th>
+              <th>Dominik</th>
+              <th>Chiara</th>
+              <th>Julius</th>
+              <th>Sina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell">02.02.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">03.02.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">04.02.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">05.02.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">06.02.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="special">AT</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">07.02.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">09.02.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">10.02.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">11.02.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="work-time">11:00-18:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="vacation">U</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">12.02.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="work-time">11:00-14:00</td>
+              <td class="free">/</td>
+              <td class="work-time">11:00-14:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">13.02.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">14.02.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+            </tr>
+            <tr class="special-day">
+              <td class="date-cell">16.02.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+              <td class="rosenmontag">Rosenmo.</td>
+            </tr>
+            <tr>
+              <td class="date-cell">17.02.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free">/</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">18.02.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">19.02.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">20.02.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">21.02.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">23.02.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="vacation">U</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">24.02.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">25.02.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">26.02.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="vacation">U</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free">/</td>
+              <td class="free">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">27.02.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="vacation">U</td>
+              <td class="special">AT</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">28.02.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- März 2026 -->
+    <div id="mar" class="tab-content">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+      </div>
+
+      <div class="schedule">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Tag</th>
+              <th>Jeremy</th>
+              <th>Caspar</th>
+              <th>Siun</th>
+              <th>Alex</th>
+              <th>Fabian</th>
+              <th>Dominik</th>
+              <th>Chiara</th>
+              <th>Julius</th>
+              <th>Sina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell">02.03.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="vacation">U</td>
+              <td class="free"></td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="special">/</td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">03.03.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">04.03.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="vacation">U</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="work-time">14:00-19:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">05.03.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="vacation">U</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="work-time">11:00-19:00</td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">06.03.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="vacation">U</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">07.03.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="vacation">U</td>
+              <td class="free"></td>
+              <td class="work-time">09:45-18:15</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">09.03.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">10.03.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">11.03.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">12.03.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">13.03.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="special">AT</td>
+              <td class="special">AT</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">14.03.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="free"></td>
+              <td class="work-time">09:45-18:15</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">13:00-18:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">16.03.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">17.03.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">18.03.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="vacation">U</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">19.03.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">20.03.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="work-time">09:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">21.03.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">09:45-18:15</td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">13:00-18:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">23.03.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">24.03.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">25.03.2026</td>
+              <td class="day-cell">MI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">26.03.2026</td>
+              <td class="day-cell">DO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">27.03.2026</td>
+              <td class="day-cell">FR</td>
+              <td class="special">AT</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+            </tr>
+            <tr class="weekend">
+              <td class="date-cell">28.03.2026</td>
+              <td class="day-cell">SA</td>
+              <td class="work-time">09:45-18:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">10:00-18:00</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">13:00-18:00</td>
+            </tr>
+            <tr>
+              <td class="date-cell">30.03.2026</td>
+              <td class="day-cell">MO</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="free"></td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="work-time">14:00-19:00</td>
+              <td class="special">/</td>
+              <td class="free"></td>
+            </tr>
+            <tr>
+              <td class="date-cell">31.03.2026</td>
+              <td class="day-cell">DI</td>
+              <td class="work-time">10:45-18:00</td>
+              <td class="work-time">10:45-19:15</td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="free"></td>
+              <td class="special">/</td>
+              <td class="work-time">14:00-19:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- April 2026 (leer) -->
+    <div id="apr" class="tab-content">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+      </div>
+      <div class="empty-month-message">
+        <h3>📅 April 2026</h3>
+        <p>Für diesen Monat liegen noch keine Daten vor.</p>
+        <p>Die Arbeitszeiten werden in Kürze ergänzt.</p>
+      </div>
+    </div>
+
+    <!-- Mai 2026 (leer) -->
+    <div id="mai" class="tab-content">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+      </div>
+      <div class="empty-month-message">
+        <h3>📅 Mai 2026</h3>
+        <p>Für diesen Monat liegen noch keine Daten vor.</p>
+        <p>Die Arbeitszeiten werden in Kürze ergänzt.</p>
+      </div>
+    </div>
+
+    <!-- Juni 2026 (leer) -->
+    <div id="jun" class="tab-content">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+      </div>
+      <div class="empty-month-message">
+        <h3>📅 Juni 2026</h3>
+        <p>Für diesen Monat liegen noch keine Daten vor.</p>
+        <p>Die Arbeitszeiten werden in Kürze ergänzt.</p>
+      </div>
+    </div>
+
+    <!-- Juli 2026 (leer) -->
+    <div id="jul" class="tab-content">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+      </div>
+      <div class="empty-month-message">
+        <h3>📅 Juli 2026</h3>
+        <p>Für diesen Monat liegen noch keine Daten vor.</p>
+        <p>Die Arbeitszeiten werden in Kürze ergänzt.</p>
+      </div>
     </div>
 
     <div class="footer">
-      <p>🛍 Titus Köln • Arbeitsplan Februar 2026 • Generiert am <span id="currentDate"></span></p>
+      <p>🛍 Titus Köln • Arbeitsplan 2026 • Generiert am <span id="currentDate"></span></p>
     </div>
   </div>
 
   <script>
+    // Aktuelles Datum anzeigen
     document.getElementById('currentDate').textContent = new Date().toLocaleDateString('de-DE', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
+    
+    // Tab-Funktion
+    function showMonth(monthId) {
+      // Alle Tabs ausblenden
+      const tabs = document.getElementsByClassName('tab-content');
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+      
+      // Alle Buttons deaktivieren
+      const buttons = document.getElementsByClassName('tab-button');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+      
+      // Ausgewählten Tab anzeigen und Button aktivieren
+      document.getElementById(monthId).classList.add('active');
+      event.target.classList.add('active');
+    }
   </script>
 </body>
 </html>
