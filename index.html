@@ -79,17 +79,17 @@
     </div>
 
     <!-- Tab Navigation -->
-    <div class="tab-navigation">
-      <!-- <button class="tab-button active" onclick="showMonth('feb')">Februar 2026</button>-->
-      <button class="tab-button" onclick="showMonth('mar')">März 2026</button>
-      <button class="tab-button" onclick="showMonth('apr')">April 2026</button>
-      <button class="tab-button" onclick="showMonth('mai')">Mai 2026</button>
-      <button class="tab-button" onclick="showMonth('jun')">Juni 2026</button>
-      <button class="tab-button" onclick="showMonth('jul')">Juli 2026</button>
-    </div>
+ <div class="tab-navigation">
+  <button class="tab-button" onclick="showMonth('feb', this)">Februar 2026</button>
+  <button class="tab-button" onclick="showMonth('mar', this)">März 2026</button>
+  <button class="tab-button" onclick="showMonth('apr', this)">April 2026</button>
+  <button class="tab-button" onclick="showMonth('mai', this)">Mai 2026</button>
+  <button class="tab-button" onclick="showMonth('jun', this)">Juni 2026</button>
+  <button class="tab-button" onclick="showMonth('jul', this)">Juli 2026</button>
+</div>
 
     <!-- Februar 2026 -->
-    <div id="feb" class="tab-content active">
+    <div id="feb" class="tab-content">
       <div class="legend">
         <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
         <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
@@ -432,7 +432,7 @@
         </table>
       </div>
     </div>
-
+    <!-- Februar Ende 2026 -->
     <!-- März 2026 -->
     <div id="mar" class="tab-content">
       <div class="legend">
@@ -867,33 +867,15 @@
       <p>🛍 Titus Köln • Arbeitsplan 2026 • Generiert am <span id="currentDate"></span></p>
     </div>
   </div>
-
-  <script>
-    // Aktuelles Datum anzeigen
-    document.getElementById('currentDate').textContent = new Date().toLocaleDateString('de-DE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-    
-    // Tab-Funktion
-    function showMonth(monthId) {
-      // Alle Tabs ausblenden
-      const tabs = document.getElementsByClassName('tab-content');
-      for (let i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-      }
-      
-      // Alle Buttons deaktivieren
-      const buttons = document.getElementsByClassName('tab-button');
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
-      }
-      
-      // Ausgewählten Tab anzeigen und Button aktivieren
+<script>
+    function showMonth(monthId, buttonEl) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
       document.getElementById(monthId).classList.add('active');
-      event.target.classList.add('active');
+      if (buttonEl) buttonEl.classList.add('active');
     }
   </script>
+  <script src="script.js"></script>
+</body>
 </body>
 </html>
