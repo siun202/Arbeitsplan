@@ -222,12 +222,12 @@
     </div>
 
     <div class="tab-navigation">
-      <button class="tab-button" onclick="showMonth('feb')">Februar 2026</button>
-      <button class="tab-button" onclick="showMonth('mar')">März 2026</button>
-      <button class="tab-button" onclick="showMonth('apr')">April 2026</button>
-      <button class="tab-button" onclick="showMonth('mai')">Mai 2026</button>
-      <button class="tab-button active" onclick="showMonth('jun')">Juni 2026</button>
-      <button class="tab-button" onclick="showMonth('jul')">Juli 2026</button>
+      <button class="tab-button" onclick="showMonth('feb', event)">Februar 2026</button>
+      <button class="tab-button" onclick="showMonth('mar', event)">März 2026</button>
+      <button class="tab-button" onclick="showMonth('apr', event)">April 2026</button>
+      <button class="tab-button" onclick="showMonth('mai', event)">Mai 2026</button>
+      <button class="tab-button active" onclick="showMonth('jun', event)">Juni 2026</button>
+      <button class="tab-button" onclick="showMonth('jul', event)">Juli 2026</button>
     </div>
 
     <!-- Februar 2026 -->
@@ -317,10 +317,10 @@
             </tr>
           </thead>
           <tbody>
-            <!-- 01.06.2026 -->
-            <tr><td class="date-cell">01.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
-            <!-- 02.06.2026 -->
-            <tr><td class="date-cell">02.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
+            <!-- 01.06.2026 | FIX: Dominik leer → 14:00-19:00 -->
+            <tr><td class="date-cell">01.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
+            <!-- 02.06.2026 | FIX: Dominik / → leer, Chiara / → 14:00-19:00 -->
+            <tr><td class="date-cell">02.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
             <!-- 03.06.2026 -->
             <tr><td class="date-cell">03.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td></tr>
             <!-- 04.06.2026 Feiertag -->
@@ -329,8 +329,8 @@
             <tr><td class="date-cell">05.06.2026</td><td class="day-cell">FR</td><td class="vacation">U</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="work-time">11:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
             <!-- 06.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">06.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td><td class="work-time">10:00-18:00</td></tr>
-            <!-- 08.06.2026 -->
-            <tr><td class="date-cell">08.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
+            <!-- 08.06.2026 | FIX: Dominik leer → 14:00-19:00 -->
+            <tr><td class="date-cell">08.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
             <!-- 09.06.2026 -->
             <tr><td class="date-cell">09.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="special">/</td><td class="special">/</td></tr>
             <!-- 10.06.2026 -->
@@ -341,8 +341,8 @@
             <tr><td class="date-cell">12.06.2026</td><td class="day-cell">FR</td><td class="special">AT</td><td class="work-time">10:45-19:15</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td></tr>
             <!-- 13.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">13.06.2026</td><td class="day-cell">SA</td><td class="work-time">09:45-18:15</td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 15.06.2026 -->
-            <tr><td class="date-cell">15.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
+            <!-- 15.06.2026 | FIX: Dominik leer → 14:00-19:00 -->
+            <tr><td class="date-cell">15.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
             <!-- 16.06.2026 -->
             <tr><td class="date-cell">16.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="vacation">U</td><td class="vacation">U</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
             <!-- 17.06.2026 -->
@@ -355,8 +355,8 @@
             <tr class="weekend"><td class="date-cell">20.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="work-time">13:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">10:00-18:00</td><td class="special">/</td></tr>
             <!-- 22.06.2026 -->
             <tr><td class="date-cell">22.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
-            <!-- 23.06.2026 -->
-            <tr><td class="date-cell">23.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="vacation">U</td><td class="vacation">U</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="special">/</td></tr>
+            <!-- 23.06.2026 | FIX: Julius 14:00-19:00 → / -->
+            <tr><td class="date-cell">23.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="vacation">U</td><td class="vacation">U</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="special">/</td><td class="special">/</td></tr>
             <!-- 24.06.2026 -->
             <tr><td class="date-cell">24.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
             <!-- 25.06.2026 -->
@@ -366,7 +366,7 @@
             <!-- 27.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">27.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="work-time">10:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td></tr>
             <!-- 29.06.2026 -->
-            <tr><td class="date-cell">29.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:00</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
+            <tr><td class="date-cell">29.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:00</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
             <!-- 30.06.2026 -->
             <tr><td class="date-cell">30.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
           </tbody>
@@ -401,7 +401,7 @@
       day: 'numeric'
     });
     
-    function showMonth(monthId) {
+    function showMonth(monthId, event) {
       const tabs = document.getElementsByClassName('tab-content');
       for (let i = 0; i < tabs.length; i++) {
         tabs[i].classList.remove('active');
