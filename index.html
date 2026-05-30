@@ -4,15 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Titus Köln - Arbeitsplan 2026</title>
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -21,6 +15,7 @@
       padding: 20px;
     }
 
+    /* ===================== DESKTOP ===================== */
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -29,25 +24,14 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
       overflow: hidden;
     }
-
     .header {
       background: linear-gradient(135deg, #2c3e50, #34495e);
       color: white;
       padding: 30px;
       text-align: center;
     }
-
-    .header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      font-weight: 300;
-    }
-
-    .header .subtitle {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 300; }
+    .header .subtitle { font-size: 1.2em; opacity: 0.9; }
     .legend {
       background: #f8f9fa;
       padding: 20px;
@@ -57,114 +41,22 @@
       gap: 15px;
       border-bottom: 2px solid #e9ecef;
     }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9em;
-    }
-
-    .legend-color {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-      border: 2px solid rgba(0,0,0,0.1);
-    }
-
-    .schedule {
-      padding: 20px;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      font-size: 0.85em;
-    }
-
-    th {
-      background: #34495e;
-      color: white;
-      padding: 12px 8px;
-      text-align: center;
-      font-weight: 600;
-      position: sticky;
-      top: 0;
-    }
-
-    td {
-      padding: 10px 6px;
-      text-align: center;
-      border-bottom: 1px solid #e9ecef;
-    }
-
-    tbody tr:hover td {
-      background: #f8f9fa;
-    }
-
-    .date-cell {
-      background: #2c3e50;
-      color: white;
-      font-weight: 600;
-    }
-
-    .day-cell {
-      background: #34495e;
-      color: white;
-      font-weight: 500;
-    }
-
-    .work-time {
-      background: #d4edda;
-      color: #155724;
-      font-weight: 600;
-    }
-
-    .vacation {
-      background: #fff3cd;
-      color: #856404;
-      font-weight: 600;
-    }
-
-    .special {
-      background: #f8d7da;
-      color: #721c24;
-      font-weight: 600;
-    }
-
-    .free {
-      background: #e9ecef;
-      color: #6c757d;
-      font-style: italic;
-    }
-
-    .holiday {
-      background-color: #e2e3e5;
-      color: #6c757d;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .weekend {
-      background: rgba(52, 73, 94, 0.03);
-    }
-
-    .footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 768px) {
-      .header h1 { font-size: 1.8em; }
-      th, td { padding: 6px 3px; font-size: 0.75em; }
-      .legend { flex-direction: column; align-items: center; }
-    }
-
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.9em; }
+    .legend-color { width: 20px; height: 20px; border-radius: 4px; border: 2px solid rgba(0,0,0,0.1); }
+    .schedule { padding: 20px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: white; font-size: 0.85em; }
+    th { background: #34495e; color: white; padding: 12px 8px; text-align: center; font-weight: 600; position: sticky; top: 0; }
+    td { padding: 10px 6px; text-align: center; border-bottom: 1px solid #e9ecef; }
+    tbody tr:hover td { background: #f8f9fa; }
+    .date-cell { background: #2c3e50; color: white; font-weight: 600; }
+    .day-cell { background: #34495e; color: white; font-weight: 500; }
+    .work-time { background: #d4edda; color: #155724; font-weight: 600; }
+    .vacation { background: #fff3cd; color: #856404; font-weight: 600; }
+    .special { background: #f8d7da; color: #721c24; font-weight: 600; }
+    .free { background: #e9ecef; color: #6c757d; font-style: italic; }
+    .holiday { background-color: #e2e3e5; color: #6c757d; text-align: center; font-weight: bold; }
+    .weekend { background: rgba(52,73,94,0.03); }
+    .footer { background: #2c3e50; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
     .tab-navigation {
       display: flex;
       background: #2c3e50;
@@ -172,7 +64,6 @@
       gap: 5px;
       overflow-x: auto;
     }
-    
     .tab-button {
       padding: 12px 24px;
       background: #34495e;
@@ -185,24 +76,10 @@
       transition: all 0.2s ease;
       white-space: nowrap;
     }
-    
-    .tab-button:hover {
-      background: #3d566e;
-    }
-    
-    .tab-button.active {
-      background: white;
-      color: #2c3e50;
-    }
-    
-    .tab-content {
-      display: none;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
+    .tab-button:hover { background: #3d566e; }
+    .tab-button.active { background: white; color: #2c3e50; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
     .empty-month-message {
       text-align: center;
       padding: 50px;
@@ -212,9 +89,226 @@
       font-style: italic;
       margin: 20px;
     }
+
+    /* Mobile Shell auf Desktop verstecken — muss VOR dem Media Query stehen */
+    .mobile-shell { display: none; }
+
+    /* ===================== MOBILE ===================== */
+    @media (max-width: 768px) {
+      body { padding: 0; background: #f0f2f5; }
+
+      /* Desktop komplett verstecken */
+      .container { display: none !important; }
+
+      /* Mobile App-Shell einblenden */
+      .mobile-shell { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+      .mob-header {
+        background: #2c3e50;
+        color: white;
+        padding: 12px 16px 0;
+        flex-shrink: 0;
+      }
+      .mob-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+      }
+      .mob-title { font-size: 18px; font-weight: 500; }
+      .mob-subtitle { font-size: 12px; opacity: 0.65; }
+      .mob-month-tabs {
+        display: flex;
+        gap: 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 0;
+      }
+      .mob-month-tabs::-webkit-scrollbar { display: none; }
+      .mob-tab {
+        color: rgba(255,255,255,0.5);
+        font-size: 13px;
+        padding: 8px 12px;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        flex-shrink: 0;
+        background: none;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+      }
+      .mob-tab.active { color: white; border-bottom: 2px solid #667eea; }
+      .mob-search {
+        background: white;
+        padding: 8px 12px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        border-bottom: 1px solid #e9ecef;
+        flex-shrink: 0;
+      }
+      .mob-search-box {
+        flex: 1;
+        background: #f0f2f5;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 7px 12px;
+        font-size: 13px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .mob-search-box input {
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 13px;
+        width: 100%;
+        color: #333;
+      }
+      .mob-filter-chip {
+        background: #f0f2f5;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 5px 12px;
+        font-size: 12px;
+        color: #666;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .mob-filter-chip.active { background: #2c3e50; color: white; border-color: #2c3e50; }
+      .mob-scroll {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px 10px 80px;
+        background: #f0f2f5;
+      }
+      .mob-week-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 10px 4px 4px;
+      }
+      .mob-day-card {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 8px;
+        overflow: hidden;
+        border: 1px solid #e8e8e8;
+      }
+      .mob-day-card.is-holiday { background: #f8f9fa; }
+      .mob-day-card.is-weekend .mob-day-header { background: rgba(52,73,94,0.04); }
+      .mob-day-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px 8px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .mob-day-name { font-size: 14px; font-weight: 600; color: #2c3e50; }
+      .mob-day-date { font-size: 12px; color: #999; }
+      .mob-holiday-badge {
+        font-size: 11px;
+        background: #e9ecef;
+        color: #6c757d;
+        padding: 3px 9px;
+        border-radius: 20px;
+        border: 1px solid #dee2e6;
+      }
+      .mob-holiday-text {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        padding: 10px;
+        font-style: italic;
+      }
+      .mob-shifts { padding: 6px 0 8px; }
+      .mob-shift-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 14px;
+      }
+      .mob-shift-row.hidden-by-filter { display: none; }
+      .mob-avatar {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 600;
+        flex-shrink: 0;
+        color: white;
+      }
+      .mob-name { font-size: 12px; color: #666; width: 52px; flex-shrink: 0; }
+      .mob-time { font-size: 13px; font-weight: 600; color: #222; flex: 1; }
+      .mob-badge {
+        font-size: 10px;
+        padding: 2px 7px;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+      .mob-badge-work { background: #d4edda; color: #155724; }
+      .mob-badge-vacation { background: #fff3cd; color: #856404; }
+      .mob-badge-special { background: #f8d7da; color: #721c24; }
+      .mob-badge-free { background: #e9ecef; color: #999; }
+      .mob-bar {
+        height: 4px;
+        border-radius: 2px;
+        width: 50px;
+        flex-shrink: 0;
+      }
+      .mob-navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e9ecef;
+        display: flex;
+        justify-content: space-around;
+        padding: 8px 0 16px;
+        z-index: 100;
+      }
+      .mob-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        font-size: 10px;
+        color: #aaa;
+        cursor: pointer;
+      }
+      .mob-nav-item.active { color: #2c3e50; }
+      .mob-nav-icon { font-size: 22px; line-height: 1; }
+      .mob-empty {
+        text-align: center;
+        padding: 40px 20px;
+        color: #aaa;
+        font-size: 14px;
+      }
+      /* Avatar-Farben pro Person */
+      .av-jeremy  { background: #3b82f6; }
+      .av-caspar  { background: #8b5cf6; }
+      .av-siun    { background: #06b6d4; }
+      .av-alex    { background: #f59e0b; }
+      .av-fabian  { background: #10b981; }
+      .av-dominik { background: #6366f1; }
+      .av-chiara  { background: #ec4899; }
+      .av-julius  { background: #f97316; }
+      .av-sina    { background: #14b8a6; }
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- ==================== DESKTOP VERSION ==================== -->
   <div class="container">
     <div class="header">
       <h1>🛍 Titus Köln</h1>
@@ -230,163 +324,104 @@
       <button class="tab-button" onclick="showMonth('jul', event)">Juli 2026</button>
     </div>
 
-    <!-- Februar 2026 -->
     <div id="feb" class="tab-content">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (/)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #cce5ff;"></div><span>Rosenmontag</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (/)</span></div>
       </div>
-      <div class="empty-month-message">
-        <h3>📅 Februar 2026</h3>
-        <p>Die Daten für Februar bleiben unverändert.</p>
-      </div>
+      <div class="empty-month-message"><h3>📅 Februar 2026</h3><p>Die Daten für Februar bleiben unverändert.</p></div>
     </div>
 
-    <!-- März 2026 -->
     <div id="mar" class="tab-content">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (leer)</span></div>
       </div>
-      <div class="empty-month-message">
-        <h3>📅 März 2026</h3>
-        <p>Die Daten für März bleiben unverändert.</p>
-      </div>
+      <div class="empty-month-message"><h3>📅 März 2026</h3><p>Die Daten für März bleiben unverändert.</p></div>
     </div>
 
-    <!-- April 2026 -->
     <div id="apr" class="tab-content">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e2e3e5;"></div><span>Feiertag</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e2e3e5;"></div><span>Feiertag</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (leer)</span></div>
       </div>
-      <div class="empty-month-message">
-        <h3>📅 April 2026</h3>
-        <p>Die Daten für April bleiben unverändert.</p>
-      </div>
+      <div class="empty-month-message"><h3>📅 April 2026</h3><p>Die Daten für April bleiben unverändert.</p></div>
     </div>
 
-    <!-- Mai 2026 -->
     <div id="mai" class="tab-content">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e2e3e5;"></div><span>Feiertag</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e2e3e5;"></div><span>Feiertag</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (leer)</span></div>
       </div>
-      <div class="empty-month-message">
-        <h3>📅 Mai 2026</h3>
-        <p>Die Daten für Mai bleiben unverändert.</p>
-      </div>
+      <div class="empty-month-message"><h3>📅 Mai 2026</h3><p>Die Daten für Mai bleiben unverändert.</p></div>
     </div>
 
-    <!-- Juni 2026 -->
     <div id="jun" class="tab-content active">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e2e3e5;"></div><span>Feiertag</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e2e3e5;"></div><span>Feiertag</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (leer)</span></div>
       </div>
-
       <div class="schedule">
         <table>
           <thead>
             <tr>
-              <th>Datum</th>
-              <th>Tag</th>
-              <th>Jeremy</th>
-              <th>Caspar</th>
-              <th>Siun</th>
-              <th>Alex</th>
-              <th>Fabian</th>
-              <th>Dominik</th>
-              <th>Chiara</th>
-              <th>Julius</th>
-              <th>Sina</th>
+              <th>Datum</th><th>Tag</th><th>Jeremy</th><th>Caspar</th><th>Siun</th>
+              <th>Alex</th><th>Fabian</th><th>Dominik</th><th>Chiara</th><th>Julius</th><th>Sina</th>
             </tr>
           </thead>
           <tbody>
-            <!-- 01.06.2026 -->
             <tr><td class="date-cell">01.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 02.06.2026 -->
             <tr><td class="date-cell">02.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
-            <!-- 03.06.2026 -->
             <tr><td class="date-cell">03.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
-            <!-- 04.06.2026 Feiertag -->
             <tr><td class="date-cell">04.06.2026</td><td class="day-cell">DO</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td><td class="holiday">Feiertag</td></tr>
-            <!-- 05.06.2026 -->
             <tr><td class="date-cell">05.06.2026</td><td class="day-cell">FR</td><td class="vacation">U</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="work-time">11:00-19:00</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 06.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">06.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td><td class="work-time">10:00-18:00</td></tr>
-            <!-- 08.06.2026 -->
             <tr><td class="date-cell">08.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 09.06.2026 -->
             <tr><td class="date-cell">09.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="special">/</td><td class="special">/</td></tr>
-            <!-- 10.06.2026 -->
             <tr><td class="date-cell">10.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 11.06.2026 -->
             <tr><td class="date-cell">11.06.2026</td><td class="day-cell">DO</td><td class="work-time">10:45-18:00</td><td class="special">AT</td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td></tr>
-            <!-- 12.06.2026 -->
             <tr><td class="date-cell">12.06.2026</td><td class="day-cell">FR</td><td class="special">AT</td><td class="work-time">10:45-19:15</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
-            <!-- 13.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">13.06.2026</td><td class="day-cell">SA</td><td class="work-time">09:45-18:15</td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 15.06.2026 -->
             <tr><td class="date-cell">15.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 16.06.2026 -->
             <tr><td class="date-cell">16.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="vacation">U</td><td class="vacation">U</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td></tr>
-            <!-- 17.06.2026 -->
             <tr><td class="date-cell">17.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 18.06.2026 -->
             <tr><td class="date-cell">18.06.2026</td><td class="day-cell">DO</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td></tr>
-            <!-- 19.06.2026 -->
             <tr><td class="date-cell">19.06.2026</td><td class="day-cell">FR</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 20.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">20.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="work-time">13:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">10:00-18:00</td><td class="special">/</td></tr>
-            <!-- 22.06.2026 -->
             <tr><td class="date-cell">22.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:15</td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
-            <!-- 23.06.2026 | FIX: Julius 14:00-19:00 → / -->
             <tr><td class="date-cell">23.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="vacation">U</td><td class="vacation">U</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="special">/</td><td class="special">/</td></tr>
-            <!-- 24.06.2026 -->
             <tr><td class="date-cell">24.06.2026</td><td class="day-cell">MI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 25.06.2026 -->
             <tr><td class="date-cell">25.06.2026</td><td class="day-cell">DO</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="special">/</td><td class="special">/</td><td class="free"></td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
-            <!-- 26.06.2026 -->
             <tr><td class="date-cell">26.06.2026</td><td class="day-cell">FR</td><td class="work-time">10:45-18:00</td><td class="special">AT</td><td class="work-time">10:45-18:15</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 27.06.2026 Samstag -->
             <tr class="weekend"><td class="date-cell">27.06.2026</td><td class="day-cell">SA</td><td class="free"></td><td class="work-time">09:45-18:15</td><td class="free"></td><td class="free"></td><td class="work-time">10:00-18:00</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">13:00-18:00</td></tr>
-            <!-- 29.06.2026 -->
             <tr><td class="date-cell">29.06.2026</td><td class="day-cell">MO</td><td class="work-time">10:45-18:00</td><td class="free"></td><td class="work-time">10:45-19:00</td><td class="special">/</td><td class="special">/</td><td class="work-time">14:00-19:00</td><td class="free"></td><td class="free"></td><td class="free"></td></tr>
-            <!-- 30.06.2026 -->
             <tr><td class="date-cell">30.06.2026</td><td class="day-cell">DI</td><td class="work-time">10:45-18:00</td><td class="work-time">10:45-19:15</td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="free"></td><td class="work-time">14:00-19:00</td><td class="free"></td></tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Juli 2026 (leer) -->
     <div id="jul" class="tab-content">
       <div class="legend">
-        <div class="legend-item"><div class="legend-color" style="background-color: #d4edda;"></div><span>Arbeitszeit</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #fff3cd;"></div><span>Urlaub (U)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
-        <div class="legend-item"><div class="legend-color" style="background-color: #e9ecef;"></div><span>Frei (leer)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#d4edda;"></div><span>Arbeitszeit</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff3cd;"></div><span>Urlaub (U)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#f8d7da;"></div><span>Sonderzeichen (AT, /)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:#e9ecef;"></div><span>Frei (leer)</span></div>
       </div>
-      <div class="empty-month-message">
-        <h3>📅 Juli 2026</h3>
-        <p>Für diesen Monat liegen noch keine Daten vor.</p>
-        <p>Die Arbeitszeiten werden in Kürze ergänzt.</p>
-      </div>
+      <div class="empty-month-message"><h3>📅 Juli 2026</h3><p>Für diesen Monat liegen noch keine Daten vor.</p></div>
     </div>
 
     <div class="footer">
@@ -394,26 +429,377 @@
     </div>
   </div>
 
+  <!-- ==================== MOBILE VERSION ==================== -->
+  <div class="mobile-shell">
+    <div class="mob-header">
+      <div class="mob-header-top">
+        <div>
+          <div class="mob-title">🛍 Titus Köln</div>
+          <div class="mob-subtitle">Arbeitsplan 2026</div>
+        </div>
+      </div>
+      <div class="mob-month-tabs">
+        <button class="mob-tab" onclick="mobShowMonth('mob-feb', this)">Feb</button>
+        <button class="mob-tab" onclick="mobShowMonth('mob-mar', this)">Mär</button>
+        <button class="mob-tab" onclick="mobShowMonth('mob-apr', this)">Apr</button>
+        <button class="mob-tab" onclick="mobShowMonth('mob-mai', this)">Mai</button>
+        <button class="mob-tab active" onclick="mobShowMonth('mob-jun', this)">Jun</button>
+        <button class="mob-tab" onclick="mobShowMonth('mob-jul', this)">Jul</button>
+      </div>
+    </div>
+
+    <div class="mob-search">
+      <div class="mob-search-box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="mob-search-input" placeholder="Name suchen..." oninput="mobFilter()">
+      </div>
+      <div class="mob-filter-chip active" id="chip-all" onclick="mobSetFilter('all')">Alle</div>
+      <div class="mob-filter-chip" id="chip-work" onclick="mobSetFilter('work')">Schicht</div>
+    </div>
+
+    <div class="mob-scroll" id="mob-scroll">
+
+      <!-- MOB FEBRUAR -->
+      <div id="mob-feb" class="mob-month-content" style="display:none;">
+        <div class="mob-empty">📅 Februar — Daten folgen</div>
+      </div>
+
+      <!-- MOB MÄRZ -->
+      <div id="mob-mar" class="mob-month-content" style="display:none;">
+        <div class="mob-empty">📅 März — Daten folgen</div>
+      </div>
+
+      <!-- MOB APRIL -->
+      <div id="mob-apr" class="mob-month-content" style="display:none;">
+        <div class="mob-empty">📅 April — Daten folgen</div>
+      </div>
+
+      <!-- MOB MAI -->
+      <div id="mob-mai" class="mob-month-content" style="display:none;">
+        <div class="mob-empty">📅 Mai — Daten folgen</div>
+      </div>
+
+      <!-- MOB JUNI -->
+      <div id="mob-jun" class="mob-month-content">
+
+        <div class="mob-week-label">KW 23 — 1.–6. Juni</div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header">
+            <span class="mob-day-name">Montag</span>
+            <span class="mob-day-date">01.06.2026</span>
+          </div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="dominik" data-type="work"><div class="mob-avatar av-dominik">Do</div><span class="mob-name">Dominik</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#c7d2fe;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="special"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">/</span><span class="mob-badge mob-badge-special">frei</span></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="special"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">/</span><span class="mob-badge mob-badge-special">frei</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Dienstag</span><span class="mob-day-date">02.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="chiara" data-type="work"><div class="mob-avatar av-chiara">Ch</div><span class="mob-name">Chiara</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fbcfe8;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Mittwoch</span><span class="mob-day-date">03.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card is-holiday">
+          <div class="mob-day-header"><span class="mob-day-name">Donnerstag</span><span class="mob-day-date">04.06.2026</span><span class="mob-holiday-badge">Feiertag</span></div>
+          <div class="mob-holiday-text">Fronleichnam — alle frei</div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Freitag</span><span class="mob-day-date">05.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="work"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">11:00–19:00</span><div class="mob-bar" style="background:#fde68a;"></div></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="work"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#a7f3d0;"></div></div>
+            <div class="mob-shift-row" data-name="jeremy" data-type="vacation"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">Urlaub</span><span class="mob-badge mob-badge-vacation">U</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card is-weekend">
+          <div class="mob-day-header"><span class="mob-day-name">Samstag</span><span class="mob-day-date">06.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">09:45–18:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">13:00–18:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+            <div class="mob-shift-row" data-name="sina" data-type="work"><div class="mob-avatar av-sina">Sn</div><span class="mob-name">Sina</span><span class="mob-time">10:00–18:00</span><div class="mob-bar" style="background:#99f6e4;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-week-label">KW 24 — 8.–13. Juni</div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Montag</span><span class="mob-day-date">08.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="dominik" data-type="work"><div class="mob-avatar av-dominik">Do</div><span class="mob-name">Dominik</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#c7d2fe;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Dienstag</span><span class="mob-day-date">09.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="chiara" data-type="work"><div class="mob-avatar av-chiara">Ch</div><span class="mob-name">Chiara</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fbcfe8;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Mittwoch</span><span class="mob-day-date">10.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="work"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fde68a;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Donnerstag</span><span class="mob-day-date">11.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="sina" data-type="work"><div class="mob-avatar av-sina">Sn</div><span class="mob-name">Sina</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#99f6e4;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="special"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">AT</span><span class="mob-badge mob-badge-special">AT</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Freitag</span><span class="mob-day-date">12.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+            <div class="mob-shift-row" data-name="jeremy" data-type="special"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">AT</span><span class="mob-badge mob-badge-special">AT</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card is-weekend">
+          <div class="mob-day-header"><span class="mob-day-name">Samstag</span><span class="mob-day-date">13.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">09:45–18:15</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">09:45–18:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="work"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">13:00–18:00</span><div class="mob-bar" style="background:#a7f3d0;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-week-label">KW 25 — 15.–20. Juni</div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Montag</span><span class="mob-day-date">15.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="dominik" data-type="work"><div class="mob-avatar av-dominik">Do</div><span class="mob-name">Dominik</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#c7d2fe;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Dienstag</span><span class="mob-day-date">16.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="chiara" data-type="work"><div class="mob-avatar av-chiara">Ch</div><span class="mob-name">Chiara</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fbcfe8;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="vacation"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">Urlaub</span><span class="mob-badge mob-badge-vacation">U</span></div>
+            <div class="mob-shift-row" data-name="alex" data-type="vacation"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">Urlaub</span><span class="mob-badge mob-badge-vacation">U</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Mittwoch</span><span class="mob-day-date">17.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="work"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fde68a;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Donnerstag</span><span class="mob-day-date">18.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="sina" data-type="work"><div class="mob-avatar av-sina">Sn</div><span class="mob-name">Sina</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#99f6e4;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Freitag</span><span class="mob-day-date">19.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="work"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#a7f3d0;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card is-weekend">
+          <div class="mob-day-header"><span class="mob-day-name">Samstag</span><span class="mob-day-date">20.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">09:45–18:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="work"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">13:00–18:00</span><div class="mob-bar" style="background:#fde68a;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">10:00–18:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-week-label">KW 26 — 22.–27. Juni</div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Montag</span><span class="mob-day-date">22.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Dienstag</span><span class="mob-day-date">23.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="chiara" data-type="work"><div class="mob-avatar av-chiara">Ch</div><span class="mob-name">Chiara</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fbcfe8;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="vacation"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">Urlaub</span><span class="mob-badge mob-badge-vacation">U</span></div>
+            <div class="mob-shift-row" data-name="alex" data-type="vacation"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">Urlaub</span><span class="mob-badge mob-badge-vacation">U</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Mittwoch</span><span class="mob-day-date">24.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="work"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#a7f3d0;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Donnerstag</span><span class="mob-day-date">25.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Freitag</span><span class="mob-day-date">26.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–18:15</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="alex" data-type="work"><div class="mob-avatar av-alex">Al</div><span class="mob-name">Alex</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fde68a;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="special"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">AT</span><span class="mob-badge mob-badge-special">AT</span></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card is-weekend">
+          <div class="mob-day-header"><span class="mob-day-name">Samstag</span><span class="mob-day-date">27.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">09:45–18:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="fabian" data-type="work"><div class="mob-avatar av-fabian">Fa</div><span class="mob-name">Fabian</span><span class="mob-time">10:00–18:00</span><div class="mob-bar" style="background:#a7f3d0;"></div></div>
+            <div class="mob-shift-row" data-name="sina" data-type="work"><div class="mob-avatar av-sina">Sn</div><span class="mob-name">Sina</span><span class="mob-time">13:00–18:00</span><div class="mob-bar" style="background:#99f6e4;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-week-label">KW 27 — 29.–30. Juni</div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Montag</span><span class="mob-day-date">29.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="siun" data-type="work"><div class="mob-avatar av-siun">Si</div><span class="mob-name">Siun</span><span class="mob-time">10:45–19:00</span><div class="mob-bar" style="background:#a5f3fc;"></div></div>
+            <div class="mob-shift-row" data-name="dominik" data-type="work"><div class="mob-avatar av-dominik">Do</div><span class="mob-name">Dominik</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#c7d2fe;"></div></div>
+          </div>
+        </div>
+
+        <div class="mob-day-card">
+          <div class="mob-day-header"><span class="mob-day-name">Dienstag</span><span class="mob-day-date">30.06.2026</span></div>
+          <div class="mob-shifts">
+            <div class="mob-shift-row" data-name="jeremy" data-type="work"><div class="mob-avatar av-jeremy">Je</div><span class="mob-name">Jeremy</span><span class="mob-time">10:45–18:00</span><div class="mob-bar" style="background:#bfdbfe;"></div></div>
+            <div class="mob-shift-row" data-name="caspar" data-type="work"><div class="mob-avatar av-caspar">Ca</div><span class="mob-name">Caspar</span><span class="mob-time">10:45–19:15</span><div class="mob-bar" style="background:#ddd6fe;"></div></div>
+            <div class="mob-shift-row" data-name="julius" data-type="work"><div class="mob-avatar av-julius">Ju</div><span class="mob-name">Julius</span><span class="mob-time">14:00–19:00</span><div class="mob-bar" style="background:#fed7aa;"></div></div>
+          </div>
+        </div>
+
+      </div><!-- end mob-jun -->
+
+      <!-- MOB JULI -->
+      <div id="mob-jul" class="mob-month-content" style="display:none;">
+        <div class="mob-empty">📅 Juli — Daten folgen</div>
+      </div>
+
+    </div><!-- end mob-scroll -->
+
+    <div class="mob-navbar">
+      <div class="mob-nav-item active">
+        <div class="mob-nav-icon">📅</div>
+        <span>Plan</span>
+      </div>
+      <div class="mob-nav-item">
+        <div class="mob-nav-icon">👤</div>
+        <span>Meine Schicht</span>
+      </div>
+      <div class="mob-nav-item">
+        <div class="mob-nav-icon">👥</div>
+        <span>Team</span>
+      </div>
+    </div>
+  </div><!-- end mobile-shell -->
+
   <script>
     document.getElementById('currentDate').textContent = new Date().toLocaleDateString('de-DE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+      year: 'numeric', month: 'long', day: 'numeric'
     });
-    
+
+    /* ---- Desktop Tab-Switching ---- */
     function showMonth(monthId, event) {
-      const tabs = document.getElementsByClassName('tab-content');
-      for (let i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-      }
-      
-      const buttons = document.getElementsByClassName('tab-button');
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
-      }
-      
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
       document.getElementById(monthId).classList.add('active');
       event.target.classList.add('active');
+    }
+
+    /* ---- Mobile Tab-Switching ---- */
+    function mobShowMonth(monthId, btn) {
+      document.querySelectorAll('.mob-month-content').forEach(m => m.style.display = 'none');
+      document.querySelectorAll('.mob-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(monthId).style.display = 'block';
+      btn.classList.add('active');
+      document.getElementById('mob-scroll').scrollTop = 0;
+    }
+
+    /* ---- Mobile Filter ---- */
+    var currentFilter = 'all';
+    function mobSetFilter(f) {
+      currentFilter = f;
+      document.getElementById('chip-all').classList.toggle('active', f === 'all');
+      document.getElementById('chip-work').classList.toggle('active', f === 'work');
+      mobFilter();
+    }
+
+    function mobFilter() {
+      var search = document.getElementById('mob-search-input').value.toLowerCase().trim();
+      document.querySelectorAll('.mob-shift-row').forEach(function(row) {
+        var name = (row.dataset.name || '').toLowerCase();
+        var type = row.dataset.type || '';
+        var nameMatch = !search || name.includes(search);
+        var typeMatch = currentFilter === 'all' || type === 'work';
+        row.style.display = (nameMatch && typeMatch) ? 'flex' : 'none';
+      });
     }
   </script>
 </body>
